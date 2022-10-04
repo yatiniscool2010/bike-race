@@ -1,3 +1,5 @@
+
+
 var path,mainCyclist;
 var player1,player2,player3;
 var pathImg,mainRacerImg1,mainRacerImg2;
@@ -165,3 +167,22 @@ function yellowCyclists(){
 }
 
 function redCyclists(){
+        player3 =createSprite(1100,Math.round(random(50, 250)));
+        player3.scale =0.06;
+        player3.velocityX = -(6 + 2*distance/150);
+        player3.addAnimation("opponentPlayer3",oppRed1Img);
+        player3.setLifetime=170;
+        redCG.add(player3);
+}
+
+function reset(){
+  gameState = PLAY;
+  gameOver.visible = false;
+  mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
+  
+  pinkCG.destroyEach();
+  yellowCG.destroyEach();
+  redCG.destroyEach();
+  
+  distance = 0;
+}
