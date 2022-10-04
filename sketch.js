@@ -48,12 +48,7 @@ mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
 mainCyclist.scale=0.07;
   
 //set collider for mainCyclist
-
-mainCyclist.setCollission("rectangle",0,0,40,40);
 mainCyclist.setCollider("rectangle",0,0,40,40);
-mainCyclist.setCollission("rectangle",0,0,40,40,50);
-mainCyclist.setCollider("rectangle",0,0,40,40,50);
-
   
 gameOver = createSprite(650,150);
 gameOver.addImage(gameOverImg);
@@ -145,21 +140,9 @@ function draw() {
     redCG.setVelocityXEach(0);
     redCG.setLifetimeEach(-1);
     
-     if(keyDown("UP_ARROW")) {
-       reset;
-     }
-
-     if(key("UP_ARROW")) {
-       reset();
-     }
-
-     if(keyDown()) {
-     reset();
-     }
-
-     if(keyDown("UP_ARROW")) {
-     reset();
-     }
+    if(keyDown("UP_ARROW")) {
+      reset();
+    }
 }
 }
 
@@ -182,24 +165,3 @@ function yellowCyclists(){
 }
 
 function redCyclists(){
-        player3 =createSprite(1100,Math.round(random(50, 250)));
-        player3.scale =0.06;
-        player3.velocityX = -(6 + 2*distance/150);
-        player3.addAnimation("opponentPlayer3",oppRed1Img);
-        player3.setLifetime=170;
-        redCG.add(player3);
-}
-
-function reset(){
- gameState = END;
-  gameOver.visible = true;
-  mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
-  
-  pinkCG.destroyEach();
-  yellowCG.destroyEach();
-  redCG.destroyEach();
-  
-  distance = 50;
- }
-
-
